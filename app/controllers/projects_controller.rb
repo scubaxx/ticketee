@@ -15,5 +15,15 @@ class ProjectsController < ApplicationController
 		else
 		# nothing yet
 		end	
-	end	
+	end
+
+	def show
+		@project = Project.find(params[:id])
+	end
+
+	private	
+
+	def project_params
+		params.require(:project).permit(:name, :description)
+	end		
 end
