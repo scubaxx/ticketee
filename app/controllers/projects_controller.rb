@@ -1,6 +1,8 @@
 class ProjectsController < ApplicationController
 	def index
+		@projects = Project.all
 	end
+	#By calling all on the Project model, you retrieve all the records from the database as Project objects, and they’re available as an enumerable Array-like object.
 	
 	def new
 		@project = Project.new
