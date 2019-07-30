@@ -1,3 +1,4 @@
+
 class ProjectsController < ApplicationController
 	def index
 		@projects = Project.all
@@ -22,6 +23,7 @@ class ProjectsController < ApplicationController
 
 	def show
 		@project = Project.find(params[:id])
+		# To find and display a record information params[:id] is used 
 	end
 
 	private	
