@@ -223,7 +223,7 @@ DEPENDENCIES
   capybara (~> 3.18)
   chromedriver-helper
   coffee-rails (~> 4.2)
-  factory_girl_rails (~> 4.5)
+  factory_girl_rails (~> 4.9)
   jbuilder (~> 2.5)
   listen (>= 3.0.5, < 3.2)
   pg (~> 1.1, >= 1.1.4)
