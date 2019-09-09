@@ -1,12 +1,9 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome";
+@import "projects";
+@import "responsive";
 
-#projects h2 {
-  font-size: 16px;
-  font-weight: bold;
-  margin: 20px 0px 0px;
-}
 
 .alert-notice {
   @extend .alert-success;
@@ -24,6 +21,11 @@ header {
   &:first-child {
     margin-top: 20px;
   }
+}
+
+ul.actions {
+  @extend .list-unstyled;
+  @extend .list-inline;
 }
 
 a.new, a.edit, a.delete {
@@ -60,7 +62,13 @@ a.delete {
 }
 
 form {
-  max-width: 500px;
+  max-width: 300px;
+}
+
+
+
+body  {
+  padding-top: 70px;
 }
 
 /*
