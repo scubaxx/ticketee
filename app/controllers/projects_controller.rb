@@ -1,4 +1,3 @@
-
 class ProjectsController < ApplicationController
 	before_action :set_project, only: [:show, :edit, :update, :destroy]
 
@@ -25,8 +24,7 @@ class ProjectsController < ApplicationController
 	end
 
 	def show
-		@project = Project.find(params[:id])
-		# To find and display a record information params[:id] is used 
+		authorize @project, :show?
 	end
 
 	def edit
