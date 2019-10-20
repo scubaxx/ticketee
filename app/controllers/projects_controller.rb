@@ -3,7 +3,7 @@ class ProjectsController < ApplicationController
 
 	
 	def index
-		@projects = Project.all
+		@projects = policy_scope(Project)
 	end
 	#By calling all on the Project model, you retrieve all the records from the database as Project objects, and they’r
 	
