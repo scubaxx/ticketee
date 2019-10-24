@@ -10,7 +10,7 @@ class Project < ActiveRecord::Base
   	end
 
   	[:manager, :editor, :viewer].each do |role|
-  		define_method "has_#{role}" do |user|
+  		define_method "has_#{role}?" do |user|
   			roles.exists?(user_id: user, role: role)
   		end
   	end		

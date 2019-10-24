@@ -1,34 +1,17 @@
 class ProjectsController < ApplicationController
-	before_action :set_project, only: [:show, :edit, :update, :destroy]
-
+	before_action :set_project, only: [:show, :edit, :update]
 	
 	def index
 		@projects = policy_scope(Project)
 	end
-	#By calling all on the Project model, you retrieve all the records from the database as Project objects, and they’r
-	
-	def new
-		@project = Project.new
-	end
-
-	def create
-		@project = Project.new(project_params)
-
-		if @project.save
-			flash[:notice] = "Project has been created."
-			redirect_to @project
-		else
-			flash.now[:alert] = "Project has not been created."
-    		render "new"
-		end	
-	end
 
 	def show
-		authorize @project, :show?
-	end
+	    authorize @project, :show?
+	    @tickets = @project.tickets
+    end
 
 	def edit
-		@project = Project.find(params[:id])
+		authorize @project, :update?
 	end
 
 	def update
@@ -41,15 +24,6 @@ class ProjectsController < ApplicationController
 	      render "edit"
 	    end
   	end
-
-	def destroy 
-		@project = Project.find(params[:id])
-		@project.destroy
-
-		flash[:notice] = "Project has been deleted."
-		redirect_to projects_path
-	end	
-
 
 	private
 
